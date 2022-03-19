@@ -63,3 +63,20 @@
 .center-text {
   text-align: center;
 }
+
+.delete-btn {
+  background: linear-gradient(45deg, #dd3b1e, #f97676);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 26px;
+  right: 26px;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
