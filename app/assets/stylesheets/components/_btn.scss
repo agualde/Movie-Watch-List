@@ -1,0 +1,78 @@
+#add-list-btn {
+display: flex;
+justify-content: flex-end;
+margin: auto;
+padding-right: 45px;
+
+  @media (max-width: 480px) {
+    padding-right: 0px;
+    justify-content: center;
+  }
+  @media (max-width: 768px) {
+    padding-right: 0px;
+    justify-content: center;
+  }
+}
+
+
+#add-movie-btn {
+display: flex;
+justify-content: flex-end;
+margin-right: 45px;
+
+  @media (max-width: 480px) {
+    margin-right: 0px;
+    font-size: 9px;
+  }
+
+}
+
+.back-btn {
+  margin-left: 45px;
+  align-self: center;
+  font-size: 18px;
+  @media (max-width: 480px) {
+    margin-left: 0px;
+  }
+}
+
+.kill-decoration {
+  text-decoration: none;
+  padding: 0;
+  padding-left: 14px;
+  font-size: 14px;
+}
+
+.kill-grabber {
+  cursor: default;
+}
+
+#cancel-form {
+  font-size: 10px;
+  padding-left: 0;
+  width: fit-content;
+  margin: auto;
+}
+
+.red {
+  color: red;
+}
+
+.ew {
+  border: none;
+  background-color: white;
+}
+
+
+.add-direct-btn {
+  align-self: flex-end;
+  font-size: 15px;
+  margin-right: 35px;
+  margin-bottom: 15px;
+  @media (max-width: 480px) {
+    margin-right: 25px;
+    margin-bottom: 15px;
+    font-size: 17px;
+  }
+
+}

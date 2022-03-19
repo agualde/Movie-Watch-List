@@ -1,0 +1,25 @@
+<div data-controller="search-movies">
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-4 mt-5 center" style="margin: auto; width: fit-content;">
+        <h1 class="mb-3" >📣 🍿 Movies 🎬 📸</h1>
+      </div>
+      <div class="center">
+        <%= form_with url: movies_path, method: :get, html: { class:
+          'col-12 col-md-4 center margin-auto mb-4', data: { search_movies_target: 'form' } } do |f| %>
+          <%= f.hidden_field(:list_id, :value => params[:list_id])%>  
+          <%= f.text_field :query,
+                          class: "center-text form-control",
+                          placeholder: 'Search',
+                          value: params[:query],
+                          data: {
+                            search_movies_target: 'input',
+                          action: 'keyup->search-movies#update'
+                        } %>
+                          <% end %>
+        </div>
+        <%= link_to "cancel", list_path(@list), class: "btn kill-link kill-decoration mb-5", id: "cancel-form" %>
+  </div>
+  <div class="display" data-search-movies-target="list">
+  <%= render "movies/list" %>
+</div>

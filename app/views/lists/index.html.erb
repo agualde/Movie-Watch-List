@@ -1,0 +1,38 @@
+
+<div class="banner shadow" style="background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80');"><div class="mb-5 banner-text"><h1 class="pb-1 m-0" data-controller="hello">Save any kind of movies</h1>
+  <%= link_to "Add a list", new_list_path, class: "btn btn-primary mt-4 px-5" %>
+  <%  %>
+  </div>
+
+
+</div></div>
+
+
+<div class="container">
+  <div class="row above-lists-contents mt-3 mb-3">
+      <p id="add-list-btn"><%= link_to "Create a movie list", new_list_path, class:"btn btn-primary white mt-3 mb-3"%></p>
+  </div>
+
+  <div class="row">
+
+    <div class="if-no-movie">
+      <p style="<%= @lists.count == 0 ? 'height: 50vh; display: flex; align-items: center; justify-content: center;' : '' %>">
+      <% if @lists.count == (0) %>
+      <a href="/lists/new" class="btn">Wanna add a list?</a>
+      <% else %>
+      <% end %>
+      </p>
+    </div>
+
+    <% @lists.each do |list| %>
+      <div class="col-lg-4 col-md-4 col-sm-12 center">
+          <div class="my-card" style=" background-image: url('https://picsum.photos/2000/3000?<%= rand(1..500) %>');">
+
+                <%= link_to list.name.capitalize, list_path(list), class: "col btn white index-shadow", style: "padding: 0;" %>
+                <%= link_to "+" , new_list_bookmark_path(list), class: "add-direct-btn white kill-decoration index-shadow" %>
+
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>

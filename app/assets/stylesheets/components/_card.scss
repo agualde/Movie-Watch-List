@@ -1,0 +1,145 @@
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: auto;
+  border-radius: 2px;
+}
+
+.card-trip > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 24px;
+
+  #card-title {
+      border-bottom: 1px solid #8080803d;
+    }
+}
+
+
+
+.my-card {
+  border: 1px solid rgba(160, 158, 158, 0.075);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 350px;
+  padding-top: 100px;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  display: flex;
+  flex-direction: column;
+
+  img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    backdrop-filter: grayscale(100%);
+  }
+}
+
+#list-title {
+  margin-left: 45px;
+  @media (max-width: 480px) {
+    margin-left: 0px;
+  }
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.color-white {
+  color: white;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-bottom-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .text-small {
+    font-size: 13px;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.above-lists {
+  display: flex;
+  align-items: center;
+}
+
+.above-lists-contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+  &:hover {
+    color: white!important;
+  }
+}
+
+#back-btn:hover {
+  color: black;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.ms-4 {
+  margin: 0 90px;
+}
+
+.lighter {
+  font-weight: lighter;
+}
+
+.overview {
+  height: 90px;
+}

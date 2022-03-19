@@ -1,0 +1,65 @@
+#bookmark_comment {
+  height: 100px;
+}
+
+
+.add-btn {
+  background: linear-gradient(45deg, #1EDD88, #76f9bf);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 26px;
+  right: 26px;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
+#add-title {
+  margin-left: 13px;
+  font-size: 11px;
+  text-align: start;
+}
+
+.from-form {
+  flex-direction: column;
+}
+
+.submit-form {
+  margin: auto;
+}
+
+.form-movie-title {
+
+}
+
+.display {
+  min-height: 100vh;
+}
+
+
+.target {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.show-form-card {
+  width: 80%;
+  margin: auto;
+}
+
+.form-poster {
+  width: 100%;
+}
+
+.center-text {
+  text-align: center;
+}

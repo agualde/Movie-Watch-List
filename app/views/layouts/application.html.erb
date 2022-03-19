@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsWatchList</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%# Google fonts links %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <%# Roboto import, Sans Serif %>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="nav-bar m-0">
+      <div class="nav-bar-contents">
+        <div id="pop-corn"><%= link_to "🍿", lists_path %></div>
+        <div class="links">
+          <%= link_to "My Lists", lists_path, class: "btn white nav-bar-links mobile-padding" %>
+          <%= link_to "New List", new_list_path, class: "btn white nav-bar-links mobile-padding-end" %>
+        </div>
+      </div>
+    </div>
+
+      <div class="container-yield" style="background-color: #EFEFEF;">
+        <%= yield %>
+      </div>
+
+
+    <div class="footer row m-0">
+        <div class="footer-contents end links">
+          <a href="#" class="links btn ml-2 mr-2">Made with love, at home</a>
+        </div>
+    </div>
+  </body>
+</html>

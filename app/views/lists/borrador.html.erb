@@ -1,0 +1,23 @@
+<%# Search input centered for phone, eventually to be used to search for movies %>
+  <div class="col-1 col-md-4">
+  </div>
+  <div class="col-4" data-controller="hello" style="width: 100%;">
+    <form class="d-flex" style="margin-top: 20px;" data-action="submit->hello#search">
+      <input type="text" class="form-control flex-grow-1 me-2" placeholder="Not connected yet" data-map-target="query">
+      <input type="submit" value="Go!" class="btn btn-primary">
+    </form>
+  </div>
+  <div class="col-1 col-md-4">
+  </div>
+  </div>
+
+
+
+
+ <div class="btn-wrap">
+    <h3 class="btn btn-warning banner-btn-kill lighter counter">
+      <%=@list.movies.count%> <%=@list.movies.count == 1 ?  'movie' : 'movies' %>
+    </h3>
+  </div>
+
+  <h1 style="height: 700px;"><%= @list.name.capitalize %></h1>

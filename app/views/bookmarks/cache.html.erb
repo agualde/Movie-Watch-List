@@ -1,0 +1,24 @@
+
+
+      <% @list.bookmarks.each do |bookmark| %>
+        <div data-controller="hello" class="col show-form-card col-md-4 col-lg-4 my-3">
+          <div  class="card-trip">
+              <a href="#" class= "form-poster" data-action="click->hello#displayForm"><%= image_tag bookmark.movie.poster_url, class: "form-poster" %></a>
+              <div data-hello-target="infos" class="add d-flex align-items-center justify-content-between">
+                <h2 class="my-3" id="add-title"><%= bookmark.movie.title %></h2>
+                <div data-action="click->hello#displayForm" class="btn add-btn">+</div>
+              </div>
+            <div  data-hello-target="form" class="d-none card-trip-infos">
+              <%= simple_form_for bookmark, html: { class: "d-non", data: { edit_movie_target: "form" } } do |f| %>
+              <%= f.input :comment, label: "Leave a comment:",as: :text %>
+          
+              <div class="from-form d-flex">
+                  <%= f.submit "Add", class: 'btn col-4 submit-form btn-success mt-3' %>
+              <div data-action="click->hello#cancelForm" class="btn" style="font-size: 8px;">cancel</div>
+              </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>

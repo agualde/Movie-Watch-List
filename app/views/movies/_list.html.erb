@@ -1,0 +1,29 @@
+<div data-controller="search-movies">
+  <div class="target" data-search-movies-target="list form">
+      <% @movies.each do |movie| %>
+        <div data-controller="hello" class="col show-form-card col-md-4 col-lg-4 my-3">
+          <div  class="card-trip" id="<%= movie.id %>">
+              <a href="#" class= "form-poster" data-hello-target="image1" data-action="click->hello#displayForm"><%= image_tag movie.poster_url, class: "form-poster" %></a>
+              <a href="#" class= "d-none form-poster" data-hello-target="image2" data-action="click->hello#cancelForm"><%= image_tag movie.poster_url, class: "form-poster" %></a>
+              <div data-hello-target="infos" class="add d-flex align-items-center justify-content-between">
+                <h2 class="btn my-3" id="add-title" data-action="click->hello#displayForm"><%= movie.title %></h2>
+                <div data-action="click->hello#add" class="btn add-btn">+</div>
+              </div>
+            <div  data-hello-target="remove" class="d-none card-trip-infos">
+             <h2 class="btn my-3" id="add-title", style="margin-top: 0px!important; margin-left: 0px; padding: 0px;" data-action="click->hello#cancelForm"><%= movie.title %></h2>
+              <p style="height: 73px; overflow: scroll;"><%= movie.overview %></p>
+               <%= simple_form_for [@list, @bookmark], html: { class: "mt-3", id: "form_id", data: { hello_target: "form", action: 'submit->hello#add' } } do |f| %>
+               <%= f.input :comment,label: "Leave a comment:", as: :text %> 
+               <%= f.hidden_field :movie, :value => movie.id %> 
+              <div class="from-form d-flex">
+                   <%= f.submit "Add", class: 'center btn col-4 submit-form btn-success mt-3' %> 
+                 <div data-action="click->hello#cancelForm" class="btn" style="font-size: 8px; width: fit-content; margin: auto;">cancel</div>
+              </div>
+
+             <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+    <% @list.movies.each do |movie| %>
+      <div class="col col-lg-4 mt-5">
+        <div class="card-trip mb-5">
+            <%= image_tag movie.poster_url, class: "poster" %>
+          <div class="card-trip-infos">
+            <div>
+              <h2 class="mt-2 mb-2" id="card-title"><%= movie.title %></h2>
+              <p class="mt-2"><%= movie.overview %></p>
+            </div>
+              <div class="card-bottom mb-2 mt-2">
+                <div class="card-bottom-left">
+                  <span class="comment p-3"><%= movie.bookmarks.last.comment %></span>
+                </div>
+                <div class="card-bottom-right">
+                  <h2 class="card-trip-pricing mt-2"><%= '⭐' * movie.rating.round  %> </h2>
+                  <%= link_to "Delete", bookmark_path(movie.bookmark.id), method: :delete, style: "color: red;", class: "mt-2 text-small" %>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
