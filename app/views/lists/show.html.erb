@@ -19,7 +19,7 @@
     <div class="if-no-movie">
       <p style="text-align: center;<%= @list.movies.count == 0 ? 'height: 50vh; display: flex; align-items: center; justify-content: center;' : '' %>">
         <% if @list.movies.count == (0) %>
-        <a href="/lists/<%= @list.id %>/bookmarks/new" class="btn">Wanna add a movie?</a>
+        <a href="/lists/<%= @list.id %>/bookmarks/new" class="btn">Browse our selection</a>
         <% else %>
         <% end %>
       </p>
