@@ -4,13 +4,6 @@ import { csrfToken } from "@rails/ujs"
 export default class extends Controller {
   static targets = [ "infos", "form", "card", "remove", "image1", "image2" ]
 
-  connect() {
-    // console.log('hello')
-    // console.log(this.infosTarget);
-    // console.log(this.formTarget);
-    // console.log(this.cardTarget);
-  }
-
   displayForm(event) {
     event.preventDefault()
     this.infosTarget.classList.add('d-none');
