@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
     @movies = Movie.all.limit(50)
 
         if params[:query].present?
-          @movies = @movies.global_search(params[:query]).limit(15)
+          @movies = @movies.global_search(params[:query]).limit(16)
           respond_to do |format|
             format.html
             format.text { render partial: 'movies/list', locals: { movies: @movies, bookmark: @bookmark }, formats: [:html] }
