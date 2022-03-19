@@ -1,7 +1,8 @@
 <div data-controller="search-movies">
   <div class="container">
+   <%= link_to "Back", list_path(@list), class: "btn kill-link kill-decoration", id: "cancel-form" %>
     <div class="row">
-      <div class="col col-md-4 mt-5 center" style="margin: auto; width: fit-content;">
+      <div class="col col-md-4 center" style="margin: auto; width: fit-content;">
         <h1 class="mb-3" >📣 🍿 Movies 🎬 📸</h1>
       </div>
       <div class="center">
@@ -18,7 +19,6 @@
                         } %>
                           <% end %>
         </div>
-        <%= link_to "cancel", list_path(@list), class: "btn kill-link kill-decoration mb-5", id: "cancel-form" %>
   </div>
   <div class="display" data-search-movies-target="list">
   <%= render "movies/list" %>
