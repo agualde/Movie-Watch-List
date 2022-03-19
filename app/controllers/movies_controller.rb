@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    
-    @list = List.find(1)
+    @list = List.find(params[:list_id])
     @bookmark = Bookmark.new
     @movies = Movie.all.limit(50)
 
@@ -14,8 +13,5 @@ class MoviesController < ApplicationController
         else
           @movies = Movie.all.limit(50)
         end
-  end
-
-  def show
   end
 end
