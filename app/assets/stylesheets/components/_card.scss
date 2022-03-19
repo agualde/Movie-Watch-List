@@ -50,11 +50,6 @@
   // filter: grayscale(1);
   display: flex;
   flex-direction: column;
-
-  img {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    backdrop-filter: grayscale(100%);
-  }
 }
 
 #list-title {
