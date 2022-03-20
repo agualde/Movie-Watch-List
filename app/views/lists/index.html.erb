@@ -25,13 +25,16 @@
     </div>
 
     <% @lists.each do |list| %>
-      <div class="col-lg-4 col-md-4 col-sm-12 center">
+      <div class="col-lg-4 col-md-4 col-sm-12 my-3">
+      <a href="<%= list_path(list) %>" style="text-decoration: none;">
           <div class="my-card" style=" background-image: url('https://picsum.photos/2000/3000?<%= rand(1..500) %>');">
 
-                <%= link_to list.name.capitalize, list_path(list), class: "col btn white index-shadow", style: "padding: 0;" %>
-                <%= link_to "+" , new_list_bookmark_path(list), class: "add-direct-btn white kill-decoration index-shadow" %>
+                <h3 class="col btn white index-shadow" style= "padding: 0; text-decoration: none; font-weight: bold;"><%= list.name.capitalize %></h3>
+                <%# <%= link_to list.name.capitalize, list_path(list), class: "col btn white index-shadow", style: "padding: 0;" %> 
 
           </div>
+        </a>
+                <%= link_to "+" , new_list_bookmark_path(list), class: "add-direct-btn white kill-decoration index-shadow" %>
       </div>
     <% end %>
   </div>
