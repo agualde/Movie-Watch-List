@@ -65,11 +65,22 @@ margin-right: 45px;
 }
 
 
+.add-direct-div {
+  display: flex; 
+  justify-content: flex-end; 
+  padding-right: 15%; 
+  position: relative; 
+  bottom: 14%;
+  @media (max-width: 480px) {
+    padding-right: 24%;
+  }
+}
+
 .add-direct-btn {
-  align-self: flex-end;
-  position: relative;
-  bottom: 42px;
-  left: 307px;
+  // align-self: flex-end;
+  // position: relative;
+  // bottom: 42px;
+  // left: 307px;
 
   @media (max-width: 480px) {
     margin-right: 25px;
@@ -77,3 +88,5 @@ margin-right: 45px;
     font-size: 17px;
 }
 }
+
+
