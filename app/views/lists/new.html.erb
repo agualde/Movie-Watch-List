@@ -9,9 +9,11 @@
 
       <%= simple_form_for [@list] do |f| %>
       <%= f.input :name %>
+      <div class="add-form">
       <%= f.button :submit, "Finished", class: "btn btn-primary mt-3 mb-1" %>
+      <%= link_to "cancel", lists_path, class: "btn kill-link kill-decoration", id: "cancel-list" %>
+      </div>
       <% end %>
-      <%= link_to "cancel", lists_path, class: "btn kill-link kill-decoration", id: "cancel-form" %>
     </div>
 
      <div class="col-1 col-md-4">

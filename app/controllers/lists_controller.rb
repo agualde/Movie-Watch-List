@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.paginate(page: params[:page], per_page: 12)
+    @lists = List.paginate(page: params[:page], per_page: 21).order('lists.created_at DESC')
   end
 
   def show
