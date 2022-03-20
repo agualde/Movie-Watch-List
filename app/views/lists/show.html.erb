@@ -35,7 +35,7 @@
               <p class="overview overflow-scroll mt-2"><%= bookmark.movie.overview %></p>
             </div>
               <div class="card-bottom mb-2 mt-3">
-                  <span class="comment"><i class="fas fa-quote-left"></i> <%= bookmark.movie.bookmarks.last.comment.strip%></span>
+                  <span class="comment"><i class="fas fa-quote-left"></i> <%= bookmark.comment.strip %></span>
                   <h2 class="card-trip-pricing"><%= '⭐' * bookmark.movie.rating.to_i.round  %> </h2>
             </div>
             <div style="display: flex; justify-content: flex-end;">
