@@ -5,18 +5,39 @@
 
 <div class="container">
   <div class="above-lists-contents mt-3">
+    <div style="width: 33%;">
     <div class="above-list-left">
-      <div class="back-btn"><a href="/lists" class = "btn back-btn-txt kill-decoration black lighter" style="padding-left: 0;" id = "back-btn"><i class="fa-solid fa-angles-left"></i></div>
+      <div class="back-btn">
+      <a href="/lists" class = "btn back-btn-txt kill-decoration black lighter" style="padding-left: 0;" id = "back-btn">
+      <i class="fa-solid fa-angles-left"></i>
+      </div>
       <h3 class="btn banner-btn-kill lighter counter" style="padding-left: 0;">
         (<%=@list.movies.count%>) <%=@list.movies.count == 1 ?  'movie' : 'movies' %>
       </h3>
     </div>
     </a>
+    </div>
+     <div style="width: 33%;">
+        <%= form_with url: list_path(@list), method: :get, html: { class:
+          'col-12 col', data: { search_movies_target: 'form' } } do |f| %>
+          <%= f.hidden_field(:list_id, :value => params[:list_id])%>  
+          <%= f.text_field :query,
+                          class: "center-text form-control",
+                          placeholder: 'Search',
+                          value: params[:query],
+                          data: {
+                            search_movies_target: 'input',
+                          action: 'keyup->search-movies#update'
+                        } %>
+                          <% end %>
+     </div>
+      <div style="width: 33%;">
       <div id="add-movie-btn"><%= link_to "Add movie", new_list_bookmark_path(@list), class: "btn btn-primary color-white" %></div>
+      </div>
   </div>
-   <div class="row justify-content-center">
 
-    <div class="if-no-movie">
+
+    <div class="if-no-movie center">
       <p style="text-align: center;<%= @list.movies.count == 0 ? 'height: 50vh; display: flex; align-items: center; justify-content: center;' : '' %>">
         <% if @list.movies.count == (0) %>
         <a href="/lists/<%= @list.id %>/bookmarks/new" class="btn">Browse selection</a>
@@ -24,6 +45,8 @@
         <% end %>
       </p>
     </div>
+   <div class="row justify-content-center">
+
 
     <% @list.bookmarks.each do |bookmark| %>
       <div class="col col-md-4 col-lg-4 mt-5">
@@ -34,8 +57,8 @@
               <h2 class="mt-2 mb-2" id="card-title"><%= bookmark.movie.title %></h2>
               <p class="overview overflow-scroll mt-2"><%= bookmark.movie.overview %></p>
             </div>
+                <span class="comment"><i class="fas fa-quote-left"></i> <%= bookmark.comment.strip %></span>
               <div class="card-bottom mb-2 mt-3">
-                  <span class="comment"><i class="fas fa-quote-left"></i> <%= bookmark.comment.strip %></span>
                   <h2 class="card-trip-pricing"><%= '⭐' * bookmark.movie.rating.to_i.round  %> </h2>
             </div>
             <div style="display: flex; justify-content: flex-end;">

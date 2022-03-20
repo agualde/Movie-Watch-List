@@ -75,7 +75,7 @@
 
 .card-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -149,4 +149,13 @@
     color: black;
     padding-inline: 3px;
   }
+}
+
+.my-lil-grid {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.wider {
+  width: 80%;
 }
