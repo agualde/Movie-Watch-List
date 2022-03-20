@@ -5,7 +5,16 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @bookmark = Bookmark.all
+    @bookmarks = Bookmark.where(list_id: @list)
+
+    if params[:query].present?
+      # raise
+      @bookmarks = @bookmarks.global_search(params[:query]).paginate(page: params[:page], per_page: 12)
+      respond_to do |format|
+        format.html
+        # format.text { render partial: 'movies/list', locals: { list: @list, bookmark: @bookmark }, formats: [:html] }
+      end
+    end
   end
 
   def new
