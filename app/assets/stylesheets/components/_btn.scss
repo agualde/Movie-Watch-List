@@ -51,8 +51,10 @@ margin-right: 45px;
   font-size: 10px;
   padding-left: 0;
   width: fit-content;
-  margin: auto;
-  margin-left: 2.5%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 20px;
 }
 
 .red {
