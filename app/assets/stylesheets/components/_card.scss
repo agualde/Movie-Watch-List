@@ -16,6 +16,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  margin-left: 20px;
 }
 
 .card-trip p {
@@ -158,4 +159,8 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
 
 .wider {
   width: 80%;
+}
+
+#delete-card{
+  background: white;
 }

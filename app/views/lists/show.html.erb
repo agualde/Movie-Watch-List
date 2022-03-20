@@ -9,7 +9,7 @@
       <%= @list.name.capitalize %>🍿 
     </h1>
   </div>
-  <div class="above-lists-contents mt-3">
+  <div class="above-lists-contents my-3">
     <div style="width: 33%; display: flex;">
     <div class="above-list-left">
       <div class="back-btn">
@@ -51,12 +51,17 @@
 
 
     <% @bookmarks.each do |bookmark| %>
-      <div class="col col-md-4 col-lg-4 mt-5">
+      <div class="col col-md-4 col-lg-4 mt-3" data-controller="index">
         <div class="card-trip mb-5">
+         <a href="#" data-action="click->index#display" data-index-target="image1">
             <%= image_tag bookmark.movie.poster_url, class: "poster" %>
-          <div class="card-trip-infos">
+        </a>
+        <a href="#" data-action="click->index#hide" data-index-target="image2" class="d-none">
+            <%= image_tag bookmark.movie.poster_url, class: "poster" %>
+        </a>
+          <h2 class="mt-2 mb-2" id="card-title"><%= bookmark.movie.title %></h2>
+          <div class="card-trip-infos d-none" data-index-target="infos">
             <div>
-              <h2 class="mt-2 mb-2" id="card-title"><%= bookmark.movie.title %></h2>
               <p class="overview overflow-scroll mt-2"><%= bookmark.movie.overview %></p>
             </div>
                 <span class="comment"><i class="fas fa-quote-left"></i> <%= bookmark.comment.strip %></span>
@@ -64,7 +69,7 @@
                   <h2 class="card-trip-pricing"><%= '⭐' * bookmark.movie.rating.to_i.round  %> </h2>
             </div>
             <div style="display: flex; justify-content: flex-end;">
-                  <%= button_to "Delete", bookmark_path(bookmark.id), method: :delete, style: "color: red;",class: "text-small kill-decoration ew", data: { confirm: 'Are you sure?' } %>           
+                  <%= button_to "Delete", bookmark_path(bookmark.id), method: :delete, style: "color: red;",class: "text-small kill-decoration ew", id: "delete-card",data: { confirm: 'Are you sure?' } %>           
             </div>
           </div>
         </div>
