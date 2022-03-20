@@ -5,7 +5,7 @@
 
 <div class="container">
   <div class="above-lists-contents mt-3">
-    <div style="width: 33%;">
+    <div style="width: 33%; display: flex;">
     <div class="above-list-left">
       <div class="back-btn">
       <a href="/lists" class = "btn back-btn-txt kill-decoration black lighter" style="padding-left: 0;" id = "back-btn">
@@ -23,12 +23,9 @@
           <%= f.hidden_field(:list_id, :value => params[:list_id])%>  
           <%= f.text_field :query,
                           class: "center-text form-control",
-                          placeholder: 'Search',
-                          value: params[:query],
-                          data: {
-                            search_movies_target: 'input',
-                          action: 'keyup->search-movies#update'
-                        } %>
+                          placeholder: 'Search in your list',
+                          value: params[:query]
+                          %>
                           <% end %>
      </div>
       <div style="width: 33%;">
@@ -48,7 +45,7 @@
    <div class="row justify-content-center">
 
 
-    <% @list.bookmarks.each do |bookmark| %>
+    <% @bookmarks.each do |bookmark| %>
       <div class="col col-md-4 col-lg-4 mt-5">
         <div class="card-trip mb-5">
             <%= image_tag bookmark.movie.poster_url, class: "poster" %>
