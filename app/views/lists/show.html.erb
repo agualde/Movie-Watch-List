@@ -34,14 +34,12 @@
               <h2 class="mt-2 mb-2" id="card-title"><%= bookmark.movie.title %></h2>
               <p class="overview overflow-scroll mt-2"><%= bookmark.movie.overview %></p>
             </div>
-              <div class="card-bottom mb-2 mt-2">
-                <div class="card-bottom-left">
+              <div class="card-bottom mb-2 mt-3">
                   <span class="comment"><i class="fas fa-quote-left"></i> <%= bookmark.movie.bookmarks.last.comment.strip%></span>
-                </div>
-                <div class="card-bottom-right">
-                  <h2 class="card-trip-pricing mt-2"><%= '⭐' * bookmark.movie.rating.to_i.round  %> </h2>
-                  <%= button_to "Delete", bookmark_path(bookmark.id), method: :delete, style: "color: red;",class: "mt-2 text-small kill-decoration ew" %>
-                </div>
+                  <h2 class="card-trip-pricing"><%= '⭐' * bookmark.movie.rating.to_i.round  %> </h2>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+                  <%= button_to "Delete", bookmark_path(bookmark.id), method: :delete, style: "color: red;",class: "text-small kill-decoration ew", data: { confirm: 'Are you sure?' } %>           
             </div>
           </div>
         </div>
