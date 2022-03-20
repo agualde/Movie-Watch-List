@@ -16,7 +16,9 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
     @bookmark.list = @list
     @bookmark.save
-    @movies = Movie.all.limit(200)
+    # @movies = Movie.all.limit(200)
+    @movies = Movie.paginate(page: params[:page], per_page: 32)
+    
   end
 
   def create
