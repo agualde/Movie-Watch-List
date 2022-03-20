@@ -66,7 +66,7 @@
             </div>
               <div class="card-bottom mb-2 mt-3">
                 <span class="comment"><i class="fas fa-quote-left"></i> <%= bookmark.comment.strip %></span>
-                  <h2 class="card-trip-pricing"><%= '⭐' * bookmark.movie.rating.to_i.round  %> </h2>
+                  <h2 class="card-trip-pricing no-underline"><%= '⭐' * bookmark.movie.rating.to_i.round  %> </h2>
             </div>
             <div style="display: flex; justify-content: flex-end;">
                   <%= button_to "Delete", bookmark_path(bookmark.id), method: :delete, style: "color: red;",class: "text-small kill-decoration ew", id: "delete-card",data: { confirm: 'Are you sure?' } %>           
