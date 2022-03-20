@@ -13,7 +13,7 @@
       <p id="add-list-btn"><%= link_to "Create your own list!", new_list_path, class:"btn btn-primary white mt-3 mb-3"%></p>
   </div>
 
-  <div class="row">
+  <div class="row mb-5">
 
     <div class="if-no-movie">
       <p style="<%= @lists.count == 0 ? 'height: 50vh; display: flex; align-items: center; justify-content: center;' : '' %>">
@@ -40,4 +40,7 @@
       </div>
     <% end %>
   </div>
+              <div class="test-test center kill-decoration my-3">
+             <%= will_paginate @lists %>
+             </div> 
 </div>
