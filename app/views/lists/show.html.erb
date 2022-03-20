@@ -59,7 +59,7 @@
         <a href="#" data-action="click->index#hide" data-index-target="image2" class="d-none">
             <%= image_tag bookmark.movie.poster_url, class: "poster" %>
         </a>
-          <h2 class="my-3" id="card-title"><%= bookmark.movie.title %></h2>
+          <h2 class="my-3 no-underline" id="card-title"><%= bookmark.movie.title %></h2>
           <div class="card-trip-infos d-none" data-index-target="infos">
             <div>
               <p class="overview overflow-scroll mt-2"><%= bookmark.movie.overview %></p>
