@@ -118,6 +118,6 @@ margin-right: 45px;
 .wow {
   @media (max-width: 480px) {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
