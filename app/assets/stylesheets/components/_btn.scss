@@ -112,3 +112,12 @@ margin-right: 45px;
    display: none!important;
   }
 }
+
+
+
+.wow {
+  @media (max-width: 480px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
