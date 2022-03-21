@@ -95,3 +95,20 @@ margin-right: 45px;
 .space-it {
   min-width: 33%;
 }
+
+
+#add-list {
+  @media (max-width: 480px) {
+    font-size: 12px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.collapse {
+  display: block!important;
+  @media (max-width: 480px) {
+   display: none!important;
+  }
+}

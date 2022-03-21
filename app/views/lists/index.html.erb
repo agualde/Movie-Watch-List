@@ -10,7 +10,7 @@
 
 <div class="container">
     <div class="my-5 mx-5" style="display: flex; justify-content: space-between; align-tiems: center;">
-        <div class="space-it"></div>
+        <div class="space-it collapse"></div>
          <%= form_with url: lists_path, method: :get, html: { class:
           'space-it', data: { search_movies_target: 'form' } } do |f| %>
           <%= f.hidden_field(:list_id, :value => params[:list_id])%>  
@@ -21,7 +21,7 @@
                           %>
                           <% end %>
           <div class="space-it" style="display: flex; justify-content: end">
-            <%= link_to "Make a list!", new_list_path, class:"btn btn-primary white" %>              
+            <%= link_to "Make a list!", new_list_path, id:"add-list", class:"btn btn-primary white" %>              
           </div>
   </div>
 
