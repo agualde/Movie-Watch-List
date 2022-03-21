@@ -9,8 +9,20 @@
 
 
 <div class="container">
-  <div class="row above-lists-contents mt-3 mb-3">
-      <p id="add-list-btn"><%= link_to "Create your own list!", new_list_path, class:"btn btn-primary white mt-3 mb-3"%></p>
+    <div class="my-5 mx-5" style="display: flex; justify-content: space-between; align-tiems: center;">
+        <div class="space-it"></div>
+         <%= form_with url: lists_path, method: :get, html: { class:
+          'space-it', data: { search_movies_target: 'form' } } do |f| %>
+          <%= f.hidden_field(:list_id, :value => params[:list_id])%>  
+          <%= f.text_field :query,
+                          class: "center-text form-control",
+                          placeholder: 'Browse lists and contents',
+                          value: params[:query]
+                          %>
+                          <% end %>
+          <div class="space-it" style="display: flex; justify-content: end">
+            <%= link_to "Make a list!", new_list_path, class:"btn btn-primary white" %>              
+          </div>
   </div>
 
   <div class="row mb-5">

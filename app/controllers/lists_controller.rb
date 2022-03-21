@@ -1,6 +1,15 @@
 class ListsController < ApplicationController
   def index
     @lists = List.paginate(page: params[:page], per_page: 21).order('lists.created_at DESC')
+
+    if params[:query].present?
+      # raise
+      @lists = @lists.global_search(params[:query]).paginate(page: params[:page], per_page: 15)
+      respond_to do |format|
+        format.html
+        # format.text { render partial: 'movies/list', locals: { list: @list, bookmark: @bookmark }, formats: [:html] }
+      end
+    end
   end
 
   def show
