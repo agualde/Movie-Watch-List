@@ -184,3 +184,10 @@ margin-right: 45px;
   display: flex;
 flex-direction: column;
 }
+
+.mobile-only-flex {
+  display: none;
+  @media (max-width: 480px) {
+    display: flex;
+  }
+}
