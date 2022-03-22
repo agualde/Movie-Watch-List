@@ -9,18 +9,26 @@
 
 
 <div class="container">
-    <div class="my-5 mx-5" style="display: flex; justify-content: space-between; align-tiems: center;">
+          <div style="display: flex; justify-content: flex-end;">
+          </div>
+    <div class="my-3 mx-5" style="display: flex; justify-content: space-between; align-tiems: center;">
         <div class="space-it collapse"></div>
          <%= form_with url: lists_path, method: :get, html: { class:
-          'space-it', data: { search_movies_target: 'form' } } do |f| %>
+          'stretch space-it', data: { search_movies_target: 'form' } } do |f| %>
           <%= f.hidden_field(:list_id, :value => params[:list_id])%>  
           <%= f.text_field :query,
                           class: "center-text form-control",
                           placeholder: 'Browse lists and contents',
                           value: params[:query]
                           %>
+                          <div class="flex">
+                          <div class="center">
+                          or
+                          </div>   
+                          <%= link_to "Add a list", new_list_path, class: 'btn btn-primary mt-2 mobile-only', style: 'margin: auto;' %>   
+                          </div>
                           <% end %>
-          <div class="space-it" style="display: flex; justify-content: end">
+          <div id="front-add-list">
             <%= link_to "Make a list!", new_list_path, id:"add-list", class:"btn btn-primary white" %>              
           </div>
   </div>
@@ -28,7 +36,7 @@
   <div class="row mb-5">
 
     <div class="if-no-movie">
-      <p style="<%= @lists.count == 0 ? 'height: 50vh; display: flex; align-items: center; justify-content: center;' : '' %>">
+      <p style="<%= @lists.count == 0 ? 'height: 50vh; display: flex; align-items: center; justify-content: center;' : 'display: none' %>">
       <% if @lists.count == (0) %>
       <a href="/lists/new" class="btn">Wanna add a list?</a>
       <% else %>

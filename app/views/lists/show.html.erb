@@ -1,16 +1,18 @@
-<div class="banner-show" style="background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80');">
+<div class="mb-0 banner-show" style="background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80');">
 </div>
 
 
-
 <div class="container">
-  <div class="center">
-    <h1 id="list-name-show">
+  <div class="center align">
+    <a href="/lists" class = "btn back-btn-txt kill-decoration black lighter" style="padding-left: 0;" id = "back-btn">
+      <i class="fa-solid fa-angles-left"></i>
+    </a>
+    <h1 class="my-5" id="list-name-show">
       <%= @list.name.capitalize %>🍿 
     </h1>
   </div>
-  <div class="above-lists-contents my-3">
-    <div style="width: 33%; display: flex;">
+  <div class="above-lists-contents mb-3">
+    <div class="stretch-it collapse-flex" style="display: flex;">
     <div class="above-list-left">
       <div class="back-btn">
       <a href="/lists" class = "btn back-btn-txt kill-decoration black lighter" style="padding-left: 0;" id = "back-btn">
@@ -22,18 +24,24 @@
     </div>
     </a>
     </div>
-     <div style="width: 33%;">
+     <div class="stretch stretch-it">
         <%= form_with url: list_path(@list), method: :get, html: { class:
-          'col-12 col', data: { search_movies_target: 'form' } } do |f| %>
+          'col col-md-4', style: 'margin: auto', data: { search_movies_target: 'form' } } do |f| %>
           <%= f.hidden_field(:list_id, :value => params[:list_id])%>  
           <%= f.text_field :query,
                           class: "center-text form-control",
                           placeholder: 'Search your movies',
                           value: params[:query]
                           %>
+                          <div class="flex">
+                           <div class="center">
+                           or
+                           </div> 
+          <%= link_to "Add a movie", new_list_bookmark_path(@list), class: 'btn btn-primary mt-2 mobile-only', style: 'margin: auto;' %>   
+                          </div>
                           <% end %>
      </div>
-      <div style="width: 33%;">
+      <div class="stretch-it collapse">
       <div id="add-movie-btn"><%= link_to "Add movie", new_list_bookmark_path(@list), class: "btn btn-primary color-white" %></div>
       </div>
   </div>

@@ -6,7 +6,7 @@ class List < ApplicationRecord
   
   include PgSearch::Model
   pg_search_scope :global_search,
-  against: [ ],
+  against: [ :name ],
   associated_against: {
     bookmarks: [ :comment ],
     movies: [ :title, :overview, :english_title, :rating ]
