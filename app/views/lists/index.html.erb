@@ -21,11 +21,9 @@
                           placeholder: 'Browse lists and contents',
                           value: params[:query]
                           %>
-                          <div class="flex">
-                          <div class="center mobile-only-flex">
-                          or
-                          </div>   
-                          <%= link_to "Add a list", new_list_path, class: 'btn btn-primary mt-2 mobile-only', style: 'margin: auto;' %>   
+                          <div class="flex" , style= "flex-direction: row!important">
+
+                          <%= link_to "Add a list", new_list_path, class: 'btn btn-primary mt-2 mobile-only', style: 'justify-content: flex-start!important;' %>   
                           </div>
                           <% end %>
           <div id="front-add-list">

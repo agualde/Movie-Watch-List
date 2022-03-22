@@ -1,15 +1,14 @@
 <div data-controller="search-movies">
   <div class="container">
     <div class="row">
-      <div class="col col-md-4 center" style="margin: auto; width: fit-content; align-items: center;">
-       <%= link_to "<<", list_path(@list), class: "mobile-only btn kill-link kill-decoration", style: "padding-left: none!important;" %>
-        <h1 class="my-5"  >📣 🍿 Movies 🎬 📸</h1>
-      </div>
     </div>
-      <div class="center mb-3">
+      <div class="center my-3">
         <div class="collapse space-it mx-3">
           <%= link_to "<<", list_path(@list), class: "collapse btn kill-link kill-decoration", style: "padding-left: none!important;" %>
         </div>
+      <div class="col col-md-4 center" style="margin: auto; width: fit-content; align-items: center;">
+       <%= link_to "<<", list_path(@list), class: "mobile-only btn kill-link kill-decoration", style: "padding-left: none!important;" %>
+      </div>
           <%= form_with url: list_movies_path, method: :get, html: { class:
             'space-it center margin-auto', data: { search_movies_target: 'form' } } do |f| %>
             <%= f.hidden_field(:list_id, :value => params[:list_id])%>  
@@ -22,6 +21,8 @@
                             action: 'keyup->search-movies#update'
                           } %>
                             <% end %>
+      <div class="col col-md-4 center" style="margin: auto; width: fit-content; align-items: center;">
+      </div>
           <div class="collapse space-it"></div>
         </div>
   <div class="display" data-search-movies-target="list">
