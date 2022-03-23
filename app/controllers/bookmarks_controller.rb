@@ -31,6 +31,7 @@ class BookmarksController < ApplicationController
         format.html { redirect_to list_path(@list) }
         format.text { redirect_to list_path(@list), formats: [:html] }
       end
+    end
   end
   
   def destroy

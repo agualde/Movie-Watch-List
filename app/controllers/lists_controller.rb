@@ -3,7 +3,6 @@ class ListsController < ApplicationController
     @lists = List.paginate(page: params[:page], per_page: 21).order('lists.created_at DESC')
 
     if params[:query].present?
-      # raise
       @lists = @lists.global_search(params[:query]).paginate(page: params[:page], per_page: 15)
       respond_to do |format|
         format.html
@@ -16,8 +15,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @bookmarks = Bookmark.where(list_id: @list).paginate(page: params[:page], per_page: 15).order('bookmarks.created_at DESC')
 
-    if params[:query].present?
-      # raise
+    if params[:query].present
       @bookmarks = @bookmarks.global_search(params[:query]).paginate(page: params[:page], per_page: 15)
       respond_to do |format|
         format.html
