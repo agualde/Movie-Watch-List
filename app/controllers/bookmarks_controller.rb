@@ -16,7 +16,6 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
     @bookmark.list = @list
     @bookmark.save
-    # @movies = Movie.all.limit(200)
     @movies = Movie.paginate(page: params[:page], per_page: 32)
     
   end
@@ -30,11 +29,8 @@ class BookmarksController < ApplicationController
     if @bookmark.save
       respond_to do |format|
         format.html { redirect_to list_path(@list) }
-        format.text { redirect_to root_path, formats: [:html] }
+        format.text { redirect_to list_path(@list), formats: [:html] }
       end
-    else
-      raise
-    end
   end
   
   def destroy
