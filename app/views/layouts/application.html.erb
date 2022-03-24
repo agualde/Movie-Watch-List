@@ -16,6 +16,9 @@
   </head>
 
   <body>
+
+    <%# <%= render 'shared/navbar' %> 
+
     <div class="nav-bar m-0">
       <div class="nav-bar-contents">
         <div id="pop-corn"><%= link_to "🍿", lists_path %></div>
@@ -25,8 +28,8 @@
         </div>
       </div>
     </div>
-
       <div class="container-yield" style="background-color: #EFEFEF;">
+
         <%= yield %>
       </div>
 

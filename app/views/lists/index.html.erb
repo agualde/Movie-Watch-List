@@ -11,6 +11,9 @@
 <div class="container">
           <div style="display: flex; justify-content: flex-end;">
           </div>
+          <div class="flex" , style= "flex-direction: flex-start!important">
+          <%= link_to "Add a list", new_list_path, class: 'btn btn-primary mt-2 mx-5 mobile-only', style: 'justify-content: flex-start!important;' %>   
+          </div>
     <div class="my-3 mx-5" style="display: flex; justify-content: space-between; align-tiems: center;">
         <div class="space-it collapse"></div>
          <%= form_with url: lists_path, method: :get, html: { class:
@@ -21,10 +24,6 @@
                           placeholder: 'Browse lists and contents',
                           value: params[:query]
                           %>
-                          <div class="flex" , style= "flex-direction: row!important">
-
-                          <%= link_to "Add a list", new_list_path, class: 'btn btn-primary mt-2 mobile-only', style: 'justify-content: flex-start!important;' %>   
-                          </div>
                           <% end %>
           <div id="front-add-list">
             <%= link_to "Make a list!", new_list_path, id:"add-list", class:"btn btn-primary white" %>              
@@ -45,13 +44,18 @@
     <% @lists.each do |list| %>
       <div class="col-lg-4 col-md-4 col-sm-12 my-3">
       <a href="<%= list_path(list) %>" style="text-decoration: none;">
+          <% if list.photo.present? %>
+          <div class="my-card" style=" background-image: url('<%= cl_image_path list.photo.key, height: 300, width: 400, crop: :fill %>');">    
+          <% else %>
           <div class="my-card" style=" background-image: url('https://picsum.photos/2000/3000?<%= rand(1..500) %>');">
+          <% end %>
 
-                <h3 class="col btn white index-shadow" style= "padding: 0; text-decoration: none; font-weight: bold;"><%= list.name.capitalize %></h3>
+            <h3 class="col btn white index-shadow" style= "padding: 0; text-decoration: none; font-weight: bold;"><%= list.name.capitalize %></h3>
                 <%# <%= link_to list.name.capitalize, list_path(list), class: "col btn white index-shadow", style: "padding: 0;" %> 
 
           </div>
         </a>
+      
         <div class="add-direct-div">
                 <%# <%= link_to "+" , new_list_bookmark_path(list), class: "add-direct-btn white kill-decoration index-shadow" %>
         </div>

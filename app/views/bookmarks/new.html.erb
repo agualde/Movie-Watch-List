@@ -11,7 +11,6 @@
       </div>
           <%= form_with url: list_movies_path, method: :get, html: { class:
             'space-it center margin-auto', data: { search_movies_target: 'form' } } do |f| %>
-            <%= f.hidden_field(:list_id, :value => params[:list_id])%>  
             <%= f.text_field :query,
                             class: "col col-md-4 center-text form-control",
                             placeholder: 'Search',

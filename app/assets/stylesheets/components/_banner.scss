@@ -41,7 +41,7 @@ ul {
 
   @media (max-width: 480px) {
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     height: 25vh;
 }
 
@@ -50,6 +50,8 @@ ul {
     font-weight: lighter;
     padding-bottom: 40px;
     color: white;
+    font-weight: bold;
+    text-shadow: 0 0 10px black;
   }
 }
 
@@ -98,3 +100,4 @@ ul {
  .above-list-left {
    display: flex;
  }
+

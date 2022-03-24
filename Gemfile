@@ -58,3 +58,6 @@ gem 'open-uri'
 gem 'json', '~> 2.6', '>= 2.6.1'
 gem 'will_paginate', '~> 3.3'
 gem 'devise'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
+gem 'active_storage_validations'
