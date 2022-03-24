@@ -1,4 +1,8 @@
+ <% if @list.photo.present? %>
+  <div class="mb-0 banner-show" style="background-image: url('<%= cl_image_path @list.photo.key %>');">
+<% else %>
 <div class="mb-0 banner-show" style="background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80');">
+<% end %>    
     <h1 class="my-5 mobile-only" id="list-name-show">
       <%= @list.name.capitalize %>
     </h1>

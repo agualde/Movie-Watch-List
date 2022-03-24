@@ -9,6 +9,7 @@
 
       <%= simple_form_for [@list] do |f| %>
       <%= f.input :name %>
+      <%= f.input :photo, as: :file, html: { class: 'form-control' }, :label => "Choose a background:"  %>
       <div class="add-form">
       <%= f.button :submit, "Finished", class: "btn btn-primary mt-3 mb-1" %>
       <%= link_to "cancel", lists_path, class: "btn kill-link kill-decoration", id: "cancel-list" %>
